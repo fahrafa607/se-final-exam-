@@ -87,4 +87,6 @@ public class DogTests {
         actualDog = new Dog(AnimalType.UNKNOWN, Skin.UNKNOWN,Gender.UNKNOWN, Breed.UNKNOWN);
         assertEquals("The dog goes Bark! Bark!", actualDog.speak(), "I was expecting Bark");
     }
+
+
 }

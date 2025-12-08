@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * Pet class is a type really for Domestic Animals
  */
-public class Pet extends AbstractPet
+public abstract class Pet extends AbstractPet
 {
     private BigDecimal cost;
 
@@ -85,4 +85,9 @@ public class Pet extends AbstractPet
 
     }
 
+    public abstract String getName();
+
+    public abstract int getAge();
+
+    public abstract String speak();
 }

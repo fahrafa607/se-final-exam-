@@ -17,7 +17,17 @@ public class CatTests {
     @BeforeAll
     public static void createAnimals()
     {
-        actualCat = new Cat(AnimalType.DOMESTIC, Skin.FUR, Gender.UNKNOWN, Breed.UNKNOWN);
+        actualCat = new Cat(AnimalType.DOMESTIC, Skin.FUR, Gender.UNKNOWN, Breed.UNKNOWN) {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+        };
     }
 
 
@@ -47,6 +57,7 @@ public class CatTests {
                 "The cat is not hyperallergetic!");
     }
 
+
     @Test
     @Order(1)
     @DisplayName("Cat has legs Test")
@@ -60,7 +71,17 @@ public class CatTests {
     @DisplayName("Cat Gender Test FeMale")
     public void genderTestFeMale()
     {
-        actualCat = new Cat(AnimalType.WILD, Skin.UNKNOWN,Gender.FEMALE, Breed.UNKNOWN);
+        actualCat = new Cat(AnimalType.WILD, Skin.UNKNOWN, Gender.FEMALE, Breed.UNKNOWN) {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+        };
         assertEquals(Gender.FEMALE, actualCat.getGender(), "Expecting Female Gender!");
     }
 
@@ -69,7 +90,17 @@ public class CatTests {
     @DisplayName("Cat Breed Test BURMESE")
     public void genderCatBreed()
     {
-        actualCat = new Cat(AnimalType.WILD, Skin.UNKNOWN,Gender.FEMALE, Breed.BURMESE);
+        actualCat = new Cat(AnimalType.WILD, Skin.UNKNOWN, Gender.FEMALE, Breed.BURMESE) {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+        };
         assertEquals(Breed.BURMESE, actualCat.getBreed(), "Expecting Burmese Maltese!");
     }
 
@@ -78,7 +109,17 @@ public class CatTests {
     @DisplayName("Cat Speak Hiss Tests")
     public void dogGoesGrrTest()
     {
-        actualCat = new Cat(AnimalType.WILD, Skin.UNKNOWN,Gender.UNKNOWN, Breed.UNKNOWN);
+        actualCat = new Cat(AnimalType.WILD, Skin.UNKNOWN, Gender.UNKNOWN, Breed.UNKNOWN) {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+        };
         assertEquals("The cat goes Hiss! Hiss!", actualCat.speak(), "I was expecting hiss");
     }
 
@@ -87,7 +128,17 @@ public class CatTests {
     @DisplayName("Cat Speak Prr Tests")
     public void catGoesPrrTest()
     {
-        actualCat = new Cat(AnimalType.UNKNOWN, Skin.UNKNOWN,Gender.UNKNOWN, Breed.UNKNOWN);
+        actualCat = new Cat(AnimalType.UNKNOWN, Skin.UNKNOWN, Gender.UNKNOWN, Breed.UNKNOWN) {
+            @Override
+            public String getName() {
+                return "";
+            }
+
+            @Override
+            public int getAge() {
+                return 0;
+            }
+        };
         assertEquals("The cat goes Meow! Meow!", actualCat.speak(), "I was expecting Prr");
     }
 }

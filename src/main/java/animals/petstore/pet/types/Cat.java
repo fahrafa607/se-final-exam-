@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 /**
  * Cat attributes
  */
-public class Cat extends Pet implements PetImpl {
+public abstract class Cat extends Pet implements PetImpl {
 
     /* Properties */
     private int numberOfLegs;
