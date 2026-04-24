@@ -4,6 +4,7 @@ import animals.AnimalType;
 import animals.petstore.pet.attributes.Breed;
 import animals.petstore.pet.attributes.Gender;
 import animals.petstore.pet.attributes.Skin;
+import animals.petstore.pet.types.Dog;
 import animals.petstore.pet.types.Snake;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -57,6 +58,23 @@ public class SnakeTests {
         String unknownSpeech = unknown.speak();
         // default uses PetType.speak string twice; just assert it's non-empty and contains "snake" or speak text
         assertFalse(unknownSpeech.isEmpty());
+
+    }
+
+    @Test
+    void getCost_returnsConstructorValue() {
+        BigDecimal expectedCost = new BigDecimal("123.45");
+
+        Dog dog = new Dog(
+                AnimalType.DOMESTIC,
+                Skin.FUR,
+                Gender.MALE,
+                Breed.POODLE,
+                expectedCost,
+                1
+        );
+
+        assertEquals(expectedCost, dog.getCost());
     }
 
     @Test

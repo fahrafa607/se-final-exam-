@@ -72,6 +72,23 @@ public class PetStoreTest
     }
 
 
+    @Test
+    void getCost_returnsConstructorValue() {
+        BigDecimal expectedCost = new BigDecimal("123.45");
+
+        Dog dog = new Dog(
+                AnimalType.DOMESTIC,
+                Skin.FUR,
+                Gender.MALE,
+                Breed.POODLE,
+                expectedCost,
+                1
+        );
+
+        assertEquals(expectedCost, dog.getCost());
+    }
+
+
 
     @Test
     @DisplayName("Inventory Count Test")
